@@ -1,0 +1,133 @@
+#clacks-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0.5rem;
+    border-radius: 1px;
+    z-index: 10000;
+    box-shadow: rgb(0 0 0) 2px 2px 5px !important;
+    max-width: 400px;
+    font-size: 14px !important;
+    text-align: left !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    background-color: red;
+    box-shadow: 2px 2px 10px #999;
+    /**Stripey background**/
+    background: repeating-linear-gradient(
+      45deg,
+      #AD1111, /**red**/
+      #AD1111 10px, /**red**/
+      #F8F6E7 10px, /**cream/background**/
+      #F8F6E7 20px, /**cream/background**/
+      #38437D 20px, /**blue**/
+      #38437D 30px, /**blue**/
+      #F8F6E7 30px, /**cream/background**/
+      #F8F6E7 40px /**cream/background**/
+    );
+  }
+
+  .clacks-toast-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem;
+    /** Background gradient **/
+    background: #F8F6E7; /* For browsers that do not support gradients */
+    background: -webkit-radial-gradient(red, yellow, green); /* Safari 5.1 to 6.0 */
+    background: -o-radial-gradient(red, yellow, green); /* For Opera 11.6 to 12.0 */
+    background: -moz-radial-gradient(red, yellow, green); /* For Firefox 3.6 to 15 */
+    background: radial-gradient(#F8F6E7, #F8F6E7, #E2D4B4); /* Standard syntax */
+    
+    
+  }
+
+  .clacks-toast-content p {
+    font-family: 'Courier New', Courier, monospace !important;
+  }
+
+  .clacks-title {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 10px !important;
+    margin-left: 0.25rem;
+  }
+  .clacks-name {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    margin-left: 0.25rem;
+  }
+  .clacks-deco {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 12px !important;
+    letter-spacing: 0.75;
+  }
+
+  .clacks-toast-content h3 {
+    font-weight: bold;
+    font-size: 16px !important;
+  }
+
+  .clacks-toast-content p {
+    font-size: 12px !important;
+  }
+  
+  .clacks-toast-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 15px;
+    font-family: 'Courier New', Courier, monospace !important;
+  }
+  
+  .clacks-toast-text {
+    flex-grow: 1;
+  }
+  
+  .clacks-toast-text h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+  }
+  
+  .clacks-toast-text p {
+    margin: 0;
+  }
+
+  .clacks-button-blue {
+    color: #ffffff !important;
+    background-color: #38437D !important;
+    font-size: 10px !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-weight: bold !important;
+    padding: 5px 10px !important;
+    border-radius: 2px !important;
+    border: none !important;
+    cursor: pointer;
+  }
+
+  .clacks-button-red {
+    color: #ffffff !important;
+    background-color: #AD1111 !important;
+    font-size: 10px !important;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-weight: bold !important;
+    padding: 5px 10px !important;
+    border-radius: 2px !important;
+    border: none !important;
+    cursor: pointer;
+  }
+
+  .clacks-button-link {
+    line-height: normal;
+  }
+
+  #clacks-toast button:hover, .clacks-button-link:hover {
+    color: crimson !important;
+    background-color: #ffffff !important;
+  }
+
+  @keyframes fade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
