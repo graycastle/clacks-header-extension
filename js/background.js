@@ -86,8 +86,12 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'suppressClacks') {
     // Calculate the expiration date for the cookie (30 days from now)
     const expirationDate = new Date();
-    expirationDate.setDate(expirationDate.getDate() + 30);
-    
+    if(request.duration === 'short') {
+      expirationDate.setDate(expirationDate.getDate() + 1);
+    } else {
+      expirationDate.setDate(expirationDate.getDate() + 30);
+    }
+
     // Set the cookie with the specified parameters
     chrome.cookies.set({
       url: `https://${request.domain}`,

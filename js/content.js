@@ -3,11 +3,10 @@ function createToast(message, domain) {
     // Create a new div element for the toast
     const toast = document.createElement('div');
     toast.id = 'clacks-toast';
-    toast.style.animation = "fade 0.5s, fade-out 0.5s";
 
     console.log('Creating toast notification for:', message, domain)
 
-    // Set the inner HTML of the toast    
+    // Set the inner HTML of the toast
 
     toast.innerHTML = `
         <div class="clacks-toast-content" style="margin-bottom: 0.5rem">
@@ -33,10 +32,16 @@ function createToast(message, domain) {
     // Append the toast to the document body
     document.body.appendChild(toast);
 
+    // Slide the toast in after a delay
+    setTimeout(() => {
+        toast.style.right = '20px';
+    }, 500);
+
     // Add event listener to close button
     const closeButton = toast.querySelector('.clacks-toast-close');
     closeButton.addEventListener('click', () => {
         document.body.removeChild(toast);
+        chrome.runtime.sendMessage({ action: 'suppressClacks', domain: domain });
     });
 
     // Add event listener to suppress button
@@ -48,11 +53,18 @@ function createToast(message, domain) {
     });
 
     // Automatically remove the toast after 5 seconds
-    // setTimeout(() => {
-    //     if (document.body.contains(toast)) {
-    //         document.body.removeChild(toast);
-    //     }
-    // }, 6500);
+    setTimeout(() => {
+        if (document.body.contains(toast)) {
+            toast.style.right = '-400px';
+        }
+
+        setTimeout(() => {
+            if (document.body.contains(toast)) {
+                document.body.removeChild(toast);
+            }
+        }, 500);
+
+    }, 10000);
 }
 
 // Listen for messages from the background script
